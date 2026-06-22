@@ -1,0 +1,10 @@
+[
+  {
+    "name": "rsshub-local",
+    "baseUrl": "http://127.0.0.1:1200"
+  },
+  {
+    "name": "rsshub-app",
+    "baseUrl": "https://rsshub.app"
+  }
+]

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>bilibili热搜</title>
+        <link>https://api.bilibili.com/x/web-interface/wbi/search/square?limit=10&amp;platform=web&amp;w_rid=f896d349549bb2c9a2bfeb08309fb93d&amp;wts=1781512494</link>
+        <atom:link href="http://rsshub.woodland.cafe/bilibili/hot-search" rel="self"
+                   type="application/rss+xml"></atom:link>
+        <description>bilibili热搜 - Powered by RSSHub</description>
+        <generator>RSSHub</generator>
+        <webMaster>contact@rsshub.app (RSSHub)</webMaster>
+        <language>en</language>
+        <lastBuildDate>Mon, 15 Jun 2026 08:34:54 GMT</lastBuildDate>
+        <ttl>5</ttl>
+        <item>
+            <title>周杰伦女儿殿下MV上线</title>
+            <description>周杰伦女儿殿下MV上线&lt;br&gt;&lt;img src=&quot;http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png&quot;
+                referrerpolicy=&quot;no-referrer&quot;&gt;
+            </description>
+            <link>
+                https://search.bilibili.com/all?keyword=%E5%91%A8%E6%9D%B0%E4%BC%A6%E5%A5%B3%E5%84%BF%E6%AE%BF%E4%B8%8BMV%E4%B8%8A%E7%BA%BF&amp;from_source=webtop_search
+            </link>
+            <guid isPermaLink="false">
+                https://search.bilibili.com/all?keyword=%E5%91%A8%E6%9D%B0%E4%BC%A6%E5%A5%B3%E5%84%BF%E6%AE%BF%E4%B8%8BMV%E4%B8%8A%E7%BA%BF&amp;from_source=webtop_search
+            </guid>
+        </item>
+        <item>
+            <title>原神木偶动画短片</title>
+            <description>原神木偶动画短片&lt;br&gt;&lt;img src=&quot;http://i0.hdslb.com/bfs/activity-plat/static/20221118/eaf2dd702d7cc14d8d9511190245d057/UF7B1wVKT2.png&quot;
+                referrerpolicy=&quot;no-referrer&quot;&gt;
+            </description>
+            <link>
+                https://search.bilibili.com/all?keyword=%E5%8E%9F%E7%A5%9E%E6%9C%A8%E5%81%B6%E5%8A%A8%E7%94%BB%E7%9F%AD%E7%89%87&amp;from_source=webtop_search
+            </link>
+            <guid isPermaLink="false">
+                https://search.bilibili.com/all?keyword=%E5%8E%9F%E7%A5%9E%E6%9C%A8%E5%81%B6%E5%8A%A8%E7%94%BB%E7%9F%AD%E7%89%87&amp;from_source=webtop_search
+            </guid>
+        </item>
+        <item>
+            <title>瑞典5-1突尼斯</title>
+            <description>瑞典5-1突尼斯&lt;br&gt;</description>
+            <link>https://search.bilibili.com/all?keyword=%E7%91%9E%E5%85%B85-1%E7%AA%81%E5%B0%BC%E6%96%AF&amp;from_source=webtop_search</link>
+            <guid isPermaLink="false">
+                https://search.bilibili.com/all?keyword=%E7%91%9E%E5%85%B85-1%E7%AA%81%E5%B0%BC%E6%96%AF&amp;from_source=webtop_search
+            </guid>
+        </item>
+        <item>
+            <title>鸣潮梦州角色短片</title>
+            <description>鸣潮梦州角色短片&lt;br&gt;&lt;img src=&quot;http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png&quot;
+                referrerpolicy=&quot;no-referrer&quot;&gt;
+            </description>
+            <link>
+                https://search.bilibili.com/all?keyword=%E9%B8%A3%E6%BD%AE%E6%A2%A6%E5%B7%9E%E8%A7%92%E8%89%B2%E7%9F%AD%E7%89%87&amp;from_source=webtop_search
+            </link>
+            <guid isPermaLink="false">
+                https://search.bilibili.com/all?keyword=%E9%B8%A3%E6%BD%AE%E6%A2%A6%E5%B7%9E%E8%A7%92%E8%89%B2%E7%9F%AD%E7%89%87&amp;from_source=webtop_search
+            </guid>
+        </item>
+        <item>
+            <title>我国成功发射一箭8星</title>
+            <description>我国成功发射一箭8星&lt;br&gt;</description>
+            <link>
+                https://search.bilibili.com/all?keyword=%E6%88%91%E5%9B%BD%E6%88%90%E5%8A%9F%E5%8F%91%E5%B0%84%E4%B8%80%E7%AE%AD8%E6%98%9F&amp;from_source=webtop_search
+            </link>
+            <guid isPermaLink="false">
+                https://search.bilibili.com/all?keyword=%E6%88%91%E5%9B%BD%E6%88%90%E5%8A%9F%E5%8F%91%E5%B0%84%E4%B8%80%E7%AE%AD8%E6%98%9F&amp;from_source=webtop_search
+            </guid>
+        </item>
+        <item>
+            <title>编造涉食安类谣言被拘留</title>
+            <description>编造涉食安类谣言被拘留&lt;br&gt;</description>
+            <link>
+                https://search.bilibili.com/all?keyword=%E7%BC%96%E9%80%A0%E6%B6%89%E9%A3%9F%E5%AE%89%E7%B1%BB%E8%B0%A3%E8%A8%80%E8%A2%AB%E6%8B%98%E7%95%99&amp;from_source=webtop_search
+            </link>
+            <guid isPermaLink="false">
+                https://search.bilibili.com/all?keyword=%E7%BC%96%E9%80%A0%E6%B6%89%E9%A3%9F%E5%AE%89%E7%B1%BB%E8%B0%A3%E8%A8%80%E8%A2%AB%E6%8B%98%E7%95%99&amp;from_source=webtop_search
+            </guid>
+        </item>
+        <item>
+            <title>IG官宣Breathe离队</title>
+            <description>IG官宣Breathe离队&lt;br&gt;&lt;img src=&quot;http://i0.hdslb.com/bfs/activity-plat/static/20221118/eaf2dd702d7cc14d8d9511190245d057/UF7B1wVKT2.png&quot;
+                referrerpolicy=&quot;no-referrer&quot;&gt;
+            </description>
+            <link>https://search.bilibili.com/all?keyword=IG%E5%AE%98%E5%AE%A3Breathe%E7%A6%BB%E9%98%9F&amp;from_source=webtop_search</link>
+            <guid isPermaLink="false">
+                https://search.bilibili.com/all?keyword=IG%E5%AE%98%E5%AE%A3Breathe%E7%A6%BB%E9%98%9F&amp;from_source=webtop_search
+            </guid>
+        </item>
+        <item>
+            <title>如何用AI模型预测世界杯</title>
+            <description>如何用AI模型预测世界杯&lt;br&gt;&lt;img src=&quot;http://i0.hdslb.com/bfs/activity-plat/static/20221118/eaf2dd702d7cc14d8d9511190245d057/UF7B1wVKT2.png&quot;
+                referrerpolicy=&quot;no-referrer&quot;&gt;
+            </description>
+            <link>
+                https://search.bilibili.com/all?keyword=%E5%A6%82%E4%BD%95%E7%94%A8AI%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B%E4%B8%96%E7%95%8C%E6%9D%AF&amp;from_source=webtop_search
+            </link>
+            <guid isPermaLink="false">
+                https://search.bilibili.com/all?keyword=%E5%A6%82%E4%BD%95%E7%94%A8AI%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B%E4%B8%96%E7%95%8C%E6%9D%AF&amp;from_source=webtop_search
+            </guid>
+        </item>
+        <item>
+            <title>范戴克说对比赛结果不满意</title>
+            <description>范戴克说对比赛结果不满意&lt;br&gt;</description>
+            <link>
+                https://search.bilibili.com/all?keyword=%E8%8C%83%E6%88%B4%E5%85%8B%E8%AF%B4%E5%AF%B9%E6%AF%94%E8%B5%9B%E7%BB%93%E6%9E%9C%E4%B8%8D%E6%BB%A1%E6%84%8F&amp;from_source=webtop_search
+            </link>
+            <guid isPermaLink="false">
+                https://search.bilibili.com/all?keyword=%E8%8C%83%E6%88%B4%E5%85%8B%E8%AF%B4%E5%AF%B9%E6%AF%94%E8%B5%9B%E7%BB%93%E6%9E%9C%E4%B8%8D%E6%BB%A1%E6%84%8F&amp;from_source=webtop_search
+            </guid>
+        </item>
+        <item>
+            <title>凡人修仙传逐帧解析</title>
+            <description>凡人修仙传逐帧解析&lt;br&gt;</description>
+            <link>
+                https://search.bilibili.com/all?keyword=%E5%87%A1%E4%BA%BA%E4%BF%AE%E4%BB%99%E4%BC%A0%E9%80%90%E5%B8%A7%E8%A7%A3%E6%9E%90&amp;from_source=webtop_search
+            </link>
+            <guid isPermaLink="false">
+                https://search.bilibili.com/all?keyword=%E5%87%A1%E4%BA%BA%E4%BF%AE%E4%BB%99%E4%BC%A0%E9%80%90%E5%B8%A7%E8%A7%A3%E6%9E%90&amp;from_source=webtop_search
+            </guid>
+        </item>
+    </channel>
+</rss>
