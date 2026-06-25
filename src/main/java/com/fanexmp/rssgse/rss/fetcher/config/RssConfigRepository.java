@@ -26,4 +26,7 @@ public interface RssConfigRepository {
     List<RssSource> load();
 
     boolean tryMarkRefresh(String route, long intervalSeconds);
+
+    /** Clear all fetch cooldowns — next fetch always goes through. */
+    void clearCooldowns();
 }

@@ -33,25 +33,25 @@ public class ArticleTest {
         System.out.println(article);
 
         // Then: 验证字段映射是否正确
-        assertThat(article.getTitle()).isEqualTo(entry.getTitle());
-        assertThat(article.getLink()).isEqualTo(entry.getLink());
+        assertThat(article.title()).isEqualTo(entry.getTitle());
+        assertThat(article.link()).isEqualTo(entry.getLink());
 
         // description 可能为 null，需判空
         String expectedDesc = entry.getDescription() != null ? entry.getDescription().getValue() : null;
-        assertThat(article.getContent()).isEqualTo(expectedDesc);
+        assertThat(article.content()).isEqualTo(expectedDesc);
 
         // publisher: RSS 中 item 没有 author，所以应为 null
-        assertThat(article.getPublisher()).isEqualTo("");
+        assertThat(article.publisher()).isEqualTo("");
 
         // updateTime: 这个 RSS 没有 pubDate，所以应为 0（或默认值）
-        assertThat(article.getUpdateTime()).isZero();
+        assertThat(article.updateTime()).isZero();
 
         // parserTime: 当前时间戳，应该大于 0
-        assertThat(article.getParserTime()).isGreaterThan(0);
+        assertThat(article.parserTime()).isGreaterThan(0);
 
         // tag/image/video: 如果构造器里把 null 转为空列表，则断言为空列表
-        assertThat(article.getTag()).isEmpty();
-        assertThat(article.getImage()).isEmpty();
-        assertThat(article.getVideo()).isEmpty();
+        assertThat(article.tag()).isEmpty();
+        assertThat(article.image()).isEmpty();
+        assertThat(article.video()).isEmpty();
     }
 }

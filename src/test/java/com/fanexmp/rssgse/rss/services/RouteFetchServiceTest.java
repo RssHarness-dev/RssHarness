@@ -65,7 +65,7 @@ class RouteFetchServiceTest {
         when(mockAiSummaryService.articlesToSummary(articles))
                 .thenReturn(CompletableFuture.completedFuture(summaries));
 
-        when(mockSummaryStorageService.saveToDB(summaries))
+        when(mockSummaryStorageService.saveToDB("/route", summaries))
                 .thenReturn(CompletableFuture.completedFuture(true));
 
         List<FetchResponse> results = service.fetchRoutes(List.of("/route")).join();
@@ -85,7 +85,7 @@ class RouteFetchServiceTest {
         when(mockAiSummaryService.articlesToSummary(articles))
                 .thenReturn(CompletableFuture.completedFuture(summaries));
 
-        when(mockSummaryStorageService.saveToDB(summaries))
+        when(mockSummaryStorageService.saveToDB("/route", summaries))
                 .thenReturn(CompletableFuture.completedFuture(false));
 
         List<FetchResponse> results = service.fetchRoutes(List.of("/route")).join();

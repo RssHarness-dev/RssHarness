@@ -39,9 +39,9 @@ class RssFetcherIntegrationTest {
 
         // Verify first article has reasonable fields
         var first = articles.getArticleList().get(0);
-        assertThat(first.getTitle()).isNotEmpty();
-        assertThat(first.getLink()).startsWith("https://www.zhihu.com");
-        assertThat(first.getDescription()).isNotNull();
-        assertThat(first.getPublisher()).isNotNull();
+        assertThat(first.title()).isNotEmpty();
+        assertThat(first.link()).startsWith("https://www.zhihu.com");
+        assertThat(first.description()).isNotNull();
+        assertThat(first.publisher()).isNotNull();
     }
 }

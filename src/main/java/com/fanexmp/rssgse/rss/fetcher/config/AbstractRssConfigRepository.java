@@ -101,6 +101,11 @@ public abstract class AbstractRssConfigRepository implements RssConfigRepository
         this.cache.remove(name);
     }
 
+    @Override
+    public void clearCooldowns() {
+        routeCache.clear();
+    }
+
     public void clear() {
         this.cache.clear();
     }

@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 public class RssFetcher {
 
@@ -35,19 +37,33 @@ public class RssFetcher {
             }
             default -> route = "/" + route;
         }
+        // Encode each path segment (Chinese chars → percent-encoding)
+        StringBuilder encoded = new StringBuilder();
+        for (String seg : route.split("/")) {
+            if (seg.isEmpty()) continue;
+            encoded.append("/").append(URLEncoder.encode(seg, StandardCharsets.UTF_8)
+                    .replace("+", "%20"));
+        }
+        if (encoded.isEmpty()) encoded.append("/");
+        String safeRoute = encoded.toString();
+
+        StringBuilder errors = new StringBuilder();
         for (RssInstance instance : rssInstanceManager) {
-            String fullUrl = instance.getBaseUrl() + route;
+            String fullUrl = instance.getBaseUrl() + safeRoute;
             try {
                 log.debug("Fetching from instance {}: {}", instance.getName(), fullUrl);
                 InputStream res = reqWrapper.get(fullUrl);
                 rssInstanceManager.markSuccess(instance);
                 return res;
             } catch (HttpReqException e) {
-                log.warn("Instance {} failed for route {}: {}", instance.getName(), route, e.getMessage());
+                String reason = e.getMessage() != null ? e.getMessage() : "Unknown";
+                log.warn("Instance {} failed for route {}: {}", instance.getName(), route, reason);
                 rssInstanceManager.markFailure(instance);
+                if (!errors.isEmpty()) errors.append("; ");
+                errors.append(reason);
             }
         }
-        log.error("All instances failed for route: {}", route);
-        throw new HttpReqException("All instances failed");
+        log.warn("All instances failed for route: {} — {}", route, errors);
+        throw new HttpReqException(errors.isEmpty() ? "All instances failed" : errors.toString());
     }
 }

@@ -6,21 +6,11 @@ import java.time.Instant;
 import java.util.Collections;
 import java.util.List;
 
-public class Article {
-    private String link;
-    private String title;
-    private String content;
-    private String publisher;
-    private String description;
-
-    // Unix 时间戳（秒）
-    private long updateTime;
-    private long parserTime;
-
-    private List<String> tag;
-    private List<String> video;
-    private List<String> image;
-
+/**
+ * @param updateTime Unix 时间戳（秒）
+ */
+public record Article(String link, String title, String content, String publisher, String description, long updateTime,
+                      long parserTime, List<String> tag, List<String> video, List<String> image) {
     public Article(
             String link,
             String title,
@@ -104,46 +94,5 @@ public class Article {
                 ", video=" + video +
                 ", image=" + image +
                 '}';
-    }
-
-    // --- getter 方法 ---
-    public String getLink() {
-        return link;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public long getUpdateTime() {
-        return updateTime;
-    }
-
-    public long getParserTime() {
-        return parserTime;
-    }
-
-    public List<String> getTag() {
-        return tag;
-    }
-
-    public List<String> getVideo() {
-        return video;
-    }
-
-    public List<String> getImage() {
-        return image;
     }
 }

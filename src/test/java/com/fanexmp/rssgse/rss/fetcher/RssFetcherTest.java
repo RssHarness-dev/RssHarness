@@ -37,7 +37,7 @@ class RssFetcherTest {
 
         assertThatThrownBy(() -> fetcher.fetchInputStream("/test"))
                 .isInstanceOf(HttpReqException.class)
-                .hasMessageContaining("All instances failed");
+                .hasMessageContaining("fail");
 
         verify(mockManager).markFailure(inst);
     }

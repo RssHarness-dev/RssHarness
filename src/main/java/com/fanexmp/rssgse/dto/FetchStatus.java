@@ -6,8 +6,8 @@ public enum FetchStatus {
     FAILED(-1, "Fetch false"),
     SAVE_FAILED(-2, "Save false");
 
-    int code;
-    String description;
+    final int code;
+    final String description;
 
     FetchStatus(int code, String description) {
         this.code = code;

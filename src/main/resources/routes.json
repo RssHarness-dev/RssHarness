@@ -1,0 +1,22 @@
+{
+  "知乎": {
+    "/zhihu/hot": {"description": "知乎热榜"},
+    "/zhihu/daily": {"description": "知乎日报"}
+  },
+  "微博": {
+    "/weibo/keyword/:keyword": {"description": "微博关键词搜索", "parameters": ["keyword"]},
+    "/weibo/search/hot": {"description": "微博热搜榜"}
+  },
+  "GitHub": {
+    "/github/trending": {"description": "GitHub Trending"},
+    "/github/search/:keyword": {"description": "GitHub 仓库搜索", "parameters": ["keyword"]}
+  },
+  "V2EX": {
+    "/v2ex/topics": {"description": "V2EX 最新主题"},
+    "/v2ex/hot": {"description": "V2EX 最热主题"}
+  },
+  "Hacker News": {
+    "/hackernews/top": {"description": "Hacker News 头条"},
+    "/hackernews/new": {"description": "Hacker News 最新"}
+  }
+}

@@ -2,6 +2,8 @@ package com.fanexmp.rssgse.rss;
 
 import com.fanexmp.rssgse.dto.FetchResponse;
 import com.fanexmp.rssgse.dto.FetchStatus;
+import com.fanexmp.rssgse.dto.Summary;
+import com.fanexmp.rssgse.storage.dataview.DataViewFactory;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +14,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Full-stack integration test from Controller down to real RSSHub.
+ * Full-stack integration test from Controller down to real RSSHub and EclipseStore.
  * Requires rsshub-local at http://127.0.0.1:1200 to be running.
  */
 @SpringBootTest
@@ -21,6 +23,9 @@ class RssControllerIntegrationTest {
 
     @Autowired
     private RssController controller;
+
+    @Autowired
+    private DataViewFactory dataViewFactory;
 
     @Test
     void should_complete_full_pipeline_for_valid_route() {
@@ -32,6 +37,19 @@ class RssControllerIntegrationTest {
         assertThat(response.getStatus())
                 .isIn(FetchStatus.SUCCESS, FetchStatus.INTERVAL);
         assertThat(response.getInfo()).isNotNull();
+    }
+
+    @Test
+    void should_persist_summaries_on_success() {
+        List<FetchResponse> results = controller.fetchRss(List.of("/zhihu/hot")).join();
+        FetchResponse response = results.get(0);
+
+        if (response.getStatus() == FetchStatus.SUCCESS) {
+            List<Summary> stored = dataViewFactory.fromRoute("/zhihu/hot").getSummaries();
+            assertThat(stored).isNotEmpty();
+            // Each summary should have a URL referencing the article
+            assertThat(stored.get(0).getUrl()).isNotEmpty();
+        }
     }
 
     @Test

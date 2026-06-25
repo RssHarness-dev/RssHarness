@@ -1,8 +1,10 @@
 package com.fanexmp.rssgse.rss.services;
 
 import com.fanexmp.rssgse.dto.Summary;
+import com.fanexmp.rssgse.storage.dataview.DataViewFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +16,13 @@ class SummaryStorageService {
 
     private static final Logger log = LoggerFactory.getLogger(SummaryStorageService.class);
 
+    @Autowired
+    private DataViewFactory dataViewFactory;
+
     @Async
-    public CompletableFuture<Boolean> saveToDB(List<Summary> summaries) {
-        // TODO: Replace with Storage layer Instance
-        log.debug("Saving {} summaries to storage", summaries.size());
-        return CompletableFuture.completedFuture(true);
+    public CompletableFuture<Boolean> saveToDB(String route, List<Summary> summaries) {
+        log.debug("Saving {} summaries for route {}", summaries.size(), route);
+        boolean success = dataViewFactory.fromRoute(route).updateSummaries(summaries);
+        return CompletableFuture.completedFuture(success);
     }
 }

@@ -25,6 +25,7 @@ public class RouteFetchService {
     private SummaryStorageService summaryStorageService;
 
     public CompletableFuture<List<FetchResponse>> fetchRoutes(List<String> routes) {
+        log.debug("fetchRoutes get {}", routes);
         List<CompletableFuture<FetchResponse>> futures = routes.stream()
                 .map(this::processSingleRoute)
                 .toList();
@@ -36,6 +37,7 @@ public class RouteFetchService {
     }
 
     private CompletableFuture<FetchResponse> processSingleRoute(String route) {
+        log.debug("Route {} is in calling", route);
         return articlesFetchService.fetchArticles(route)
                 .thenCompose(articles -> {
                     if (articles == null) {
@@ -45,7 +47,7 @@ public class RouteFetchService {
                     }
                     return aiSummaryService.articlesToSummary(articles)
                             .thenCompose(summaries ->
-                                    summaryStorageService.saveToDB(summaries)
+                                    summaryStorageService.saveToDB(route, summaries)
                                             .thenApply(success -> {
                                                 if (!success) {
                                                     log.error("Summary storage failed for route: {}", route);
@@ -58,7 +60,7 @@ public class RouteFetchService {
                             );
                 })
                 .exceptionally(ex -> {
-                    log.error("Route {} processing failed", route, ex);
+                    log.warn("Route {} processing failed: {}", route, ex.getMessage());
                     return new FetchResponse(FetchStatus.FAILED, route, ex.getMessage());
                 });
     }

@@ -37,7 +37,7 @@ public class JsonRssConfigRepository extends AbstractRssConfigRepository {
         }
         List<RssSource> rssSourceList;
         try {
-            rssSourceList = mapper.readValue(configPath.toFile(), new TypeReference<List<RssSource>>() {
+            rssSourceList = mapper.readValue(configPath.toFile(), new TypeReference<>() {
             });
             log.info("Loaded {} RSS sources from {}", rssSourceList.size(), configPath);
         } catch (IOException e) {
