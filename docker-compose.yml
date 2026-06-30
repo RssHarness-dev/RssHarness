@@ -1,0 +1,27 @@
+services:
+  rsshub:
+    image: diygod/rsshub:chromium-bundled
+    ports:
+      - "1200:1200"
+    restart: unless-stopped
+    environment:
+      - CACHE_TYPE=memory
+
+  rssagent:
+    build: .
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    depends_on:
+      - rsshub
+    environment:
+      # ── Required: set your DeepSeek API key ──
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-sk-your-key-here}
+      # ── Optional overrides ──
+      - RSSAGENT_ROUTES_URL=${RSSAGENT_ROUTES_URL:-http://rsshub:1200/rsshub/routes/zh}
+      - RSSHUB_BASE_URL=${RSSHUB_BASE_URL:-http://rsshub:1200}
+    volumes:
+      - rssagent_data:/app/data
+
+volumes:
+  rssagent_data:

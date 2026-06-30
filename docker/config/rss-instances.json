@@ -1,0 +1,6 @@
+[
+  {
+    "name": "rsshub-docker",
+    "baseUrl": "http://rsshub:1200"
+  }
+]
