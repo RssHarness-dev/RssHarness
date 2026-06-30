@@ -64,9 +64,9 @@ Storage Domain (storage/)            ← DDD
 
 ### 多实例容错 / Multi-Instance Failover
 - **滑动窗口排序** — 最近 10 次成功率决定实例优先级，主实例失败自动切换下一个
-- **3 秒 HTTP 超时** — 串行 failover 不对公共 RSSHub 实例造成流量冲击
+- **中文 URL 编码** — 路径中的中文参数自动百分号编码
 
-*Sliding-window health scoring (last 10 results) sorts instances by success rate. Serial failover avoids traffic spikes to public RSSHub instances.*
+*Sliding-window health scoring. Chinese path segments auto-encoded for HTTP.*
 
 ### 异步全链路 / Fully Async Pipeline
 - `@Async` + `CompletableFuture.allOf` 扇出模式，N 个路由并发处理
@@ -111,9 +111,20 @@ export DEEPSEEK_API_KEY=sk-your-key-here
 ./mvnw clean package
 ```
 
-### 运行 / Run
+### Docker 部署 / Docker
 ```bash
-# Launch CLI interactive mode
+# Build and run with docker-compose (includes RSSHub)
+export DEEPSEEK_API_KEY=sk-your-key
+docker-compose up -d
+
+# Or pull pre-built image
+docker pull makeiny/rss-agent:latest
+docker run -e DEEPSEEK_API_KEY=sk-your-key makeiny/rss-agent:latest
+```
+
+### 本地运行 / Local Run
+```bash
+./mvnw package -DskipTests
 java -jar target/rssagent-0.0.1-SNAPSHOT.jar
 ```
 
@@ -139,8 +150,9 @@ RssAgent> /exit
 |---|---|---|
 | `spring.ai.deepseek.api-key` | `$DEEPSEEK_API_KEY` or fallback | DeepSeek API key |
 | `rssagent.cli.enabled` | `true` | Enable CLI REPL |
-| `rssagent.routes-url` | `http://127.0.0.1:1200/routes` | RSSHub routes JSON endpoint |
-| `rss.fetch-interval` | `1800` | Cooldown between fetches (seconds) |
+| `rssagent.routes-url` | `http://127.0.0.1:1200/rsshub/routes/zh` | RSSHub routes RSS endpoint |
+| `rssagent.routes-file` | `./data/routes.json` | Local route cache file |
+| `rss.fetch-interval` | `60` | Cooldown between fetches (seconds) |
 | `rss.config-path` | `config/rss-sources.json` | Route→URL mappings |
 | `rss.instance-path` | `config/rss-instances.json` | RSSHub instances |
 | `org.eclipse.store.storage-directory` | `./data/eclipse-store` | Embedded DB path |
@@ -243,7 +255,7 @@ rssagent/
 | Storage | `SummaryViewTest`, `StorageIntegrationTest` | 6 | Unit + Integration |
 | AI Routing | `RouteCatalogTest` | 5 | Unit |
 | AI Conversation | `ContextManagerTest`, `ConversationServiceTest` | 7 | Unit (Mockito) |
-| Application | `RssgseApplicationTests` | 1 | Spring Integration |
+| Application | `RssAgentApplicationTests` | 1 | Spring Integration |
 
 ---
 
@@ -251,13 +263,12 @@ rssagent/
 
 | 决策 / Decision | 说明 / Rationale |
 |---|---|
-| **二级 Function Calling** / Two-tier | 避免一次发送全量路由：Tier1 平台 (~80, ~3K tokens) → Tier2 路由 (每平台 ~10 条) |
-| **SessionCache 一次性** / Disposable | 每次查询新建、查完即弃；路由表可能更新，不复用旧缓存 |
+| **单次 ChatClient 调用** / Single-call | LLM 自主编排 searchPlatforms → listRoutes → fetchRss → readSummaries，不手动分 Tier |
+| **DOM+XPath 路由解析** / Raw XML parsing | 绕过 Rome 的 guid 处理污染，直接从 RSS XML 提取路由路径 |
+| **ChatMemory 多轮对话** / Multi-turn | Spring AI MessageChatMemoryAdvisor 自动管理会话历史 |
 | **tryMarkRefresh 原子 CAS** | `ConcurrentHashMap.compute()` 合并 check+set，消除 @Async 环境下的竞态 |
 | **滑动窗口排序** / Sliding window | `Deque<Boolean>` 最近 10 次，按成功率排序。避免取模导致的权重失真 |
-| **串行 failover** / Serial failover | 不对公共 RSSHub 实例产生并发流量冲击，3s 超时保证可用性 |
 | **@Lazy 打破循环** | AiSummaryService → ChatClient → RssTools → RssController → RouteFetchService 形成环 |
-| **DDD vs MVC 边界** | RSS 域保持 MVC 管道模式，存储域 DDD。SummaryStorageService 是薄适配层 |
 | **降级保护** / Graceful degradation | AI 摘要失败 → placeholder 摘要保留 URL+标题，核心数据不丢失 |
 
 ---
@@ -266,11 +277,9 @@ rssagent/
 
 - [x] RSS 域：多实例容错、异步管道、Rome 解析、EclipseStore 持久化
 - [x] 存储域：DDD 聚合根、CQS 视图、EclipseStore 集成
-- [x] AI 域：Spring AI 2.0、二级 Function Calling、路由目录同步、CLI REPL
-- [x] 流式打字机效果：`SearchCallback` + `Flux<String>` token 级实时输出
-- [ ] 多轮对话：ContextManager 接入 ConversationService，跨轮次上下文保留
-- [ ] RSSHub `/routes` 实际 JSON 格式适配与端到端验证
-- [ ] 对话导出 / 历史查询
+- [x] AI 域：Spring AI 2.0 Tool Calling、路由目录 DOM+XPath 同步、ChatMemory 多轮对话
+- [x] CLI REPL：流式打字机效果、三级颜色渲染、会话管理
+- [x] Docker 部署：多阶段构建、docker-compose 编排、环境变量配置
 - [ ] Web UI（可选）
 
 ---

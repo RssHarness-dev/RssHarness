@@ -1,5 +1,5 @@
-target/
 data/
+*.log
 *.log
 .git/
 .idea/
