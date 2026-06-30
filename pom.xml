@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.fanexmp</groupId>
-    <artifactId>rssgse</artifactId>
+    <artifactId>rssagent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>rssgse</name>
-    <description>rssgse</description>
+    <name>RssAgent</name>
+    <description>RSS-powered Generative Search Agent</description>
     <url/>
     <licenses>
         <license/>

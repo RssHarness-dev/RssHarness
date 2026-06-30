@@ -514,26 +514,23 @@
 0000000000001000079 java.util.Collections$EmptyList{}
 0000000000001000080 java.util.Collections$EmptySet{}
 0000000000001000081 java.util.Collections$EmptyMap{}
-0000000000001000082 com.fanexmp.rssgse.storage.DataRoot{
-	java.util.Map com.fanexmp.rssgse.storage.DataRoot#routeSummariesListPair,
+0000000000001000082 com.fanexmp.rssagent.storage.DataRoot{
+	java.util.Map  com.fanexmp.rssagent.storage.DataRoot#routeSummariesListPair,
+	java.util.List com.fanexmp.rssagent.storage.DataRoot#routePlatforms        ,
+	long           com.fanexmp.rssagent.storage.DataRoot#lastRouteSync         ,
 }
 0000000000001000083 java.util.Map{}
-0000000000001000084 com.fanexmp.rssgse.dto.Summary{
-	java.lang.String com.fanexmp.rssgse.dto.Summary#url                 ,
-	java.lang.String com.fanexmp.rssgse.dto.Summary#publisher           ,
-	java.lang.String com.fanexmp.rssgse.dto.Summary#publishTime         ,
-	java.lang.String com.fanexmp.rssgse.dto.Summary#summaryModel        ,
-	java.lang.String com.fanexmp.rssgse.dto.Summary#summaryPromptVersion,
-	java.lang.String com.fanexmp.rssgse.dto.Summary#title               ,
-	java.lang.String com.fanexmp.rssgse.dto.Summary#tag                 ,
-	java.lang.String com.fanexmp.rssgse.dto.Summary#description         ,
-	java.lang.String com.fanexmp.rssgse.dto.Summary#content             ,
-	long             com.fanexmp.rssgse.dto.Summary#summaryTime         ,
-	int              com.fanexmp.rssgse.dto.Summary#score               ,
+0000000000001000084 java.util.List{}
+0000000000001000085 com.fanexmp.rssagent.dto.Summary{
+	java.lang.String com.fanexmp.rssagent.dto.Summary#url                 ,
+	java.lang.String com.fanexmp.rssagent.dto.Summary#publisher           ,
+	java.lang.String com.fanexmp.rssagent.dto.Summary#publishTime         ,
+	java.lang.String com.fanexmp.rssagent.dto.Summary#summaryModel        ,
+	java.lang.String com.fanexmp.rssagent.dto.Summary#summaryPromptVersion,
+	java.lang.String com.fanexmp.rssagent.dto.Summary#title               ,
+	java.lang.String com.fanexmp.rssagent.dto.Summary#tag                 ,
+	java.lang.String com.fanexmp.rssagent.dto.Summary#description         ,
+	java.lang.String com.fanexmp.rssagent.dto.Summary#content             ,
+	long             com.fanexmp.rssagent.dto.Summary#summaryTime         ,
+	int              com.fanexmp.rssagent.dto.Summary#score               ,
 }
-0000000000001000085 com.fanexmp.rssgse.storage.DataRoot{
-	java.util.Map  com.fanexmp.rssgse.storage.DataRoot#routeSummariesListPair,
-	java.util.List com.fanexmp.rssgse.storage.DataRoot#routePlatforms        ,
-	long           com.fanexmp.rssgse.storage.DataRoot#lastRouteSync         ,
-}
-0000000000001000086 java.util.List{}

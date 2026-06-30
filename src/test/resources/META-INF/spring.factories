@@ -1,1 +1,1 @@
-org.springframework.boot.test.context.TestConfiguration=com.fanexmp.rssgse.TestAiConfig
+org.springframework.boot.test.context.TestConfiguration=com.fanexmp.rssagent.TestAiConfig

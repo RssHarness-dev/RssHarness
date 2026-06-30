@@ -1,0 +1,24 @@
+package com.fanexmp.rssagent.rss;
+
+import com.fanexmp.rssagent.dto.FetchResponse;
+import com.fanexmp.rssagent.rss.services.RouteFetchService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+
+@Controller
+public class RssController {
+
+    RouteFetchService routeFetchService;
+
+    @Autowired
+    public RssController(RouteFetchService routeFetchService) {
+        this.routeFetchService = routeFetchService;
+    }
+
+    public CompletableFuture<List<FetchResponse>> fetchRss(List<String> routes) {
+        return routeFetchService.fetchRoutes(routes);
+    }
+}
