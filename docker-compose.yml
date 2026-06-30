@@ -1,3 +1,6 @@
+# ── RssAgent + RSSHub 一体化部署 ──
+# docker-compose up -d 即可启动全部服务
+
 services:
   rsshub:
     image: diygod/rsshub:chromium-bundled
@@ -15,13 +18,12 @@ services:
     depends_on:
       - rsshub
     environment:
-      # ── Required: set your DeepSeek API key ──
       - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-sk-your-key-here}
-      # ── Optional overrides ──
-      - RSSAGENT_ROUTES_URL=${RSSAGENT_ROUTES_URL:-http://rsshub:1200/rsshub/routes/zh}
-      - RSSHUB_BASE_URL=${RSSHUB_BASE_URL:-http://rsshub:1200}
+      - RSSAGENT_ROUTES_URL=http://rsshub:1200/rsshub/routes/zh
     volumes:
       - rssagent_data:/app/data
+    stdin_open: true   # CLI interactive mode
+    tty: true
 
 volumes:
   rssagent_data:
