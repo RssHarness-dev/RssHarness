@@ -1,4 +1,4 @@
-package com.fanexmp.rssagent.rss.dto;
+package com.fanexmp.rssharness.rss.dto;
 
 public class RssInstance {
 

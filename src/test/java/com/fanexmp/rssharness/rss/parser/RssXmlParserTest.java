@@ -1,6 +1,6 @@
-package com.fanexmp.rssagent.rss.parser;
+package com.fanexmp.rssharness.rss.parser;
 
-import com.fanexmp.rssagent.rss.dto.Articles;
+import com.fanexmp.rssharness.rss.dto.Articles;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

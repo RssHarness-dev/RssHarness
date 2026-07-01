@@ -1,6 +1,6 @@
-package com.fanexmp.rssagent.storage;
+package com.fanexmp.rssharness.storage;
 
-import com.fanexmp.rssagent.storage.dataview.DataViewFactory;
+import com.fanexmp.rssharness.storage.dataview.DataViewFactory;
 import org.eclipse.store.storage.embedded.types.EmbeddedStorage;
 import org.eclipse.store.storage.embedded.types.EmbeddedStorageManager;
 import org.springframework.beans.factory.annotation.Value;

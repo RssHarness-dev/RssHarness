@@ -1,4 +1,4 @@
-package com.fanexmp.rssagent.ai.conversation;
+package com.fanexmp.rssharness.ai.conversation;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,10 +24,10 @@ public class ContextManager {
     // Rough estimate: English ~4 chars/token, Chinese ~1.5 chars/token
     private static final double CHARS_PER_TOKEN = 3.0;
 
-    @Value("${rssagent.context.max-tokens:8000}")
+    @Value("${rssharness.context.max-tokens:8000}")
     private int maxTokens;
 
-    @Value("${rssagent.context.reserve-tokens:2000}")
+    @Value("${rssharness.context.reserve-tokens:2000}")
     private int reserveTokens; // tokens reserved for the response
 
     private final Map<String, List<Message>> sessions = new ConcurrentHashMap<>();

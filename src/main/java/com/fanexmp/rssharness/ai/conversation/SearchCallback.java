@@ -1,4 +1,4 @@
-package com.fanexmp.rssagent.ai.conversation;
+package com.fanexmp.rssharness.ai.conversation;
 
 import java.util.List;
 

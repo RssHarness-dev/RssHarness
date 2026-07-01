@@ -1,8 +1,8 @@
-package com.fanexmp.rssagent.rss.services;
+package com.fanexmp.rssharness.rss.services;
 
-import com.fanexmp.rssagent.dto.Summary;
-import com.fanexmp.rssagent.rss.dto.Article;
-import com.fanexmp.rssagent.rss.dto.Articles;
+import com.fanexmp.rssharness.dto.Summary;
+import com.fanexmp.rssharness.rss.dto.Article;
+import com.fanexmp.rssharness.rss.dto.Articles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.client.ChatClient;

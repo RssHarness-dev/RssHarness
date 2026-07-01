@@ -1,7 +1,7 @@
-package com.fanexmp.rssagent.rss.fetcher.config;
+package com.fanexmp.rssharness.rss.fetcher.config;
 
-import com.fanexmp.rssagent.rss.dto.RssSource;
-import com.fanexmp.rssagent.rss.exception.RssConfigRepoException;
+import com.fanexmp.rssharness.rss.dto.RssSource;
+import com.fanexmp.rssharness.rss.exception.RssConfigRepoException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;

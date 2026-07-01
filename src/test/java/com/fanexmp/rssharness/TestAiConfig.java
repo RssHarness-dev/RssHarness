@@ -1,4 +1,4 @@
-package com.fanexmp.rssagent;
+package com.fanexmp.rssharness;
 
 import org.springframework.ai.chat.messages.AssistantMessage;
 import org.springframework.ai.chat.model.ChatModel;

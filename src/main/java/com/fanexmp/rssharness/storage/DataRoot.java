@@ -1,6 +1,6 @@
-package com.fanexmp.rssagent.storage;
+package com.fanexmp.rssharness.storage;
 
-import com.fanexmp.rssagent.dto.Summary;
+import com.fanexmp.rssharness.dto.Summary;
 
 import java.util.ArrayList;
 import java.util.List;

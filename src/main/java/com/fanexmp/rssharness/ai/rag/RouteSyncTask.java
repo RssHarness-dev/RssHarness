@@ -1,7 +1,7 @@
-package com.fanexmp.rssagent.ai.rag;
+package com.fanexmp.rssharness.ai.rag;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fanexmp.rssagent.storage.DataRoot;
+import com.fanexmp.rssharness.storage.DataRoot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,10 +33,10 @@ public class RouteSyncTask {
     private static final Logger log = LoggerFactory.getLogger(RouteSyncTask.class);
     private static final Duration REQUEST_TIMEOUT = Duration.ofSeconds(60);
 
-    @Value("${rssagent.routes-url:http://127.0.0.1:1200/rsshub/routes/zh}")
+    @Value("${rssharness.routes-url:http://127.0.0.1:1200/rsshub/routes/zh}")
     private String routesUrl;
 
-    @Value("${rssagent.routes-file:./data/routes.json}")
+    @Value("${rssharness.routes-file:./data/routes.json}")
     private Path localRoutesFile;
 
     @Autowired private RouteCatalog routeCatalog;

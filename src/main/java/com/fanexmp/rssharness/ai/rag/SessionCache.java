@@ -1,6 +1,6 @@
-package com.fanexmp.rssagent.ai.rag;
+package com.fanexmp.rssharness.ai.rag;
 
-import com.fanexmp.rssagent.ai.dto.RouteEntry;
+import com.fanexmp.rssharness.ai.dto.RouteEntry;
 
 import java.util.*;
 

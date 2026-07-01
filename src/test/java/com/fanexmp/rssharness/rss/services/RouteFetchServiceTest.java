@@ -1,9 +1,9 @@
-package com.fanexmp.rssagent.rss.services;
+package com.fanexmp.rssharness.rss.services;
 
-import com.fanexmp.rssagent.dto.FetchResponse;
-import com.fanexmp.rssagent.dto.FetchStatus;
-import com.fanexmp.rssagent.dto.Summary;
-import com.fanexmp.rssagent.rss.dto.Articles;
+import com.fanexmp.rssharness.dto.FetchResponse;
+import com.fanexmp.rssharness.dto.FetchStatus;
+import com.fanexmp.rssharness.dto.Summary;
+import com.fanexmp.rssharness.rss.dto.Articles;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

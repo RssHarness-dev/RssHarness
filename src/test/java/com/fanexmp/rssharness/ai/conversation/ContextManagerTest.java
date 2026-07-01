@@ -1,4 +1,4 @@
-package com.fanexmp.rssagent.ai.conversation;
+package com.fanexmp.rssharness.ai.conversation;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,6 +1,6 @@
-package com.fanexmp.rssagent.rss.parser;
+package com.fanexmp.rssharness.rss.parser;
 
-import com.fanexmp.rssagent.rss.dto.Articles;
+import com.fanexmp.rssharness.rss.dto.Articles;
 
 import java.io.InputStream;
 

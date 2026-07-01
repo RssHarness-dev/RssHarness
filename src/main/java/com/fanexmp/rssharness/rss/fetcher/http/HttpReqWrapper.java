@@ -1,6 +1,6 @@
-package com.fanexmp.rssagent.rss.fetcher.http;
+package com.fanexmp.rssharness.rss.fetcher.http;
 
-import com.fanexmp.rssagent.rss.exception.HttpReqException;
+import com.fanexmp.rssharness.rss.exception.HttpReqException;
 
 import java.io.InputStream;
 

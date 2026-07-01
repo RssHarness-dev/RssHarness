@@ -1,6 +1,6 @@
-package com.fanexmp.rssagent.rss.fetcher.config;
+package com.fanexmp.rssharness.rss.fetcher.config;
 
-import com.fanexmp.rssagent.rss.dto.RssSource;
+import com.fanexmp.rssharness.rss.dto.RssSource;
 
 import java.util.List;
 

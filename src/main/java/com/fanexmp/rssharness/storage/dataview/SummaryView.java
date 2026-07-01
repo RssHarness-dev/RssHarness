@@ -1,7 +1,7 @@
-package com.fanexmp.rssagent.storage.dataview;
+package com.fanexmp.rssharness.storage.dataview;
 
-import com.fanexmp.rssagent.dto.Summary;
-import com.fanexmp.rssagent.storage.DataRoot;
+import com.fanexmp.rssharness.dto.Summary;
+import com.fanexmp.rssharness.storage.DataRoot;
 import org.eclipse.store.storage.embedded.types.EmbeddedStorageManager;
 
 import java.util.ArrayList;

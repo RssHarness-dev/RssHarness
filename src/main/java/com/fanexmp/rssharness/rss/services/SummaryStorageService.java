@@ -1,7 +1,7 @@
-package com.fanexmp.rssagent.rss.services;
+package com.fanexmp.rssharness.rss.services;
 
-import com.fanexmp.rssagent.dto.Summary;
-import com.fanexmp.rssagent.storage.dataview.DataViewFactory;
+import com.fanexmp.rssharness.dto.Summary;
+import com.fanexmp.rssharness.storage.dataview.DataViewFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

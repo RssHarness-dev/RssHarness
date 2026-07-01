@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.fanexmp</groupId>
-    <artifactId>rssagent</artifactId>
+    <artifactId>rssharness</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>RssAgent</name>
+    <name>RssHarness</name>
     <description>RSS-powered Generative Search Agent</description>
     <url/>
     <licenses>

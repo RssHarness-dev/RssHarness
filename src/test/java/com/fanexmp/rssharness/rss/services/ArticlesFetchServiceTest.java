@@ -1,9 +1,9 @@
-package com.fanexmp.rssagent.rss.services;
+package com.fanexmp.rssharness.rss.services;
 
-import com.fanexmp.rssagent.rss.dto.Articles;
-import com.fanexmp.rssagent.rss.fetcher.RssFetcher;
-import com.fanexmp.rssagent.rss.fetcher.config.RssConfigRepository;
-import com.fanexmp.rssagent.rss.parser.RssXmlParser;
+import com.fanexmp.rssharness.rss.dto.Articles;
+import com.fanexmp.rssharness.rss.fetcher.RssFetcher;
+import com.fanexmp.rssharness.rss.fetcher.config.RssConfigRepository;
+import com.fanexmp.rssharness.rss.parser.RssXmlParser;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

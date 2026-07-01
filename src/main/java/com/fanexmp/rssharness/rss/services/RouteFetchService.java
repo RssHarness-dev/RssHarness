@@ -1,7 +1,7 @@
-package com.fanexmp.rssagent.rss.services;
+package com.fanexmp.rssharness.rss.services;
 
-import com.fanexmp.rssagent.dto.FetchResponse;
-import com.fanexmp.rssagent.dto.FetchStatus;
+import com.fanexmp.rssharness.dto.FetchResponse;
+import com.fanexmp.rssharness.dto.FetchStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

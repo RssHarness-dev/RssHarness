@@ -1,7 +1,7 @@
-package com.fanexmp.rssagent.rss.parser;
+package com.fanexmp.rssharness.rss.parser;
 
-import com.fanexmp.rssagent.rss.dto.Article;
-import com.fanexmp.rssagent.rss.dto.Articles;
+import com.fanexmp.rssharness.rss.dto.Article;
+import com.fanexmp.rssharness.rss.dto.Articles;
 import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.FeedException;

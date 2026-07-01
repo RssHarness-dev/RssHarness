@@ -1,8 +1,8 @@
-package com.fanexmp.rssagent.rss.fetcher;
+package com.fanexmp.rssharness.rss.fetcher;
 
-import com.fanexmp.rssagent.rss.dto.RssSource;
-import com.fanexmp.rssagent.rss.exception.RssConfigRepoException;
-import com.fanexmp.rssagent.rss.fetcher.config.RssConfigRepository;
+import com.fanexmp.rssharness.rss.dto.RssSource;
+import com.fanexmp.rssharness.rss.exception.RssConfigRepoException;
+import com.fanexmp.rssharness.rss.fetcher.config.RssConfigRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

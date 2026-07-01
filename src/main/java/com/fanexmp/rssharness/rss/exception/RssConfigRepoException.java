@@ -1,4 +1,4 @@
-package com.fanexmp.rssagent.rss.exception;
+package com.fanexmp.rssharness.rss.exception;
 
 import java.io.Serial;
 

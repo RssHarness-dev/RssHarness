@@ -1,4 +1,4 @@
-package com.fanexmp.rssagent.ai.dto;
+package com.fanexmp.rssharness.ai.dto;
 
 import java.util.List;
 

@@ -1,11 +1,12 @@
-package com.fanexmp.rssagent.ai.conversation;
+package com.fanexmp.rssharness.ai.conversation;
 
-import com.fanexmp.rssagent.ai.rag.RouteCatalog;
-import com.fanexmp.rssagent.ai.tool.RssTools;
-import com.fanexmp.rssagent.dto.FetchResponse;
+import com.fanexmp.rssharness.ai.rag.RouteCatalog;
+import com.fanexmp.rssharness.ai.tool.RssTools;
+import com.fanexmp.rssharness.dto.FetchResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,18 +36,19 @@ public class ConversationService {
 
     public List<FetchResponse> searchStreaming(String sessionId, String question, SearchCallback cb) {
         cb.onThinking("Thinking …");
-        var charCount = new int[1];
         try {
-            chatClient.prompt()
+            ChatResponse last = chatClient.prompt()
                     .user(question)
                                         .stream()
-                    .content()
-                    .doOnNext(token -> {
-                        charCount[0] += token.length();
-                        cb.onResponseToken(token);
+                    .chatResponse()
+                    .doOnNext(resp -> {
+                        String text = resp.getResult().getOutput().getText();
+                        if (text != null) cb.onResponseToken(text);
                     })
                     .blockLast();
-            cb.onTokens(charCount[0] / 3);
+            if (last != null && last.getMetadata().getUsage() != null) {
+                cb.onTokens(last.getMetadata().getUsage().getTotalTokens());
+            }
         } catch (Exception e) {
             log.warn("Streaming failed", e);
             cb.onError("ai", e.getMessage());
@@ -59,7 +61,7 @@ public class ConversationService {
                 cb.onFetchResult(r.getRoute(), r.getStatus().name(), r.getInfo());
             }
             long ok = results.stream()
-                    .filter(r -> r.getStatus() == com.fanexmp.rssagent.dto.FetchStatus.SUCCESS)
+                    .filter(r -> r.getStatus() == com.fanexmp.rssharness.dto.FetchStatus.SUCCESS)
                     .count();
             cb.onResponse(String.format("%d/%d routes fetched · %d success",
                     results.size(), results.size(), ok));

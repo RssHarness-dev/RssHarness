@@ -1,4 +1,4 @@
-# RssAgent — RSS-plus Generative Search Engine
+# RssHarness — RSS-plus Generative Search Engine
 
 ## 定位
 RSS 赋能的精准搜索。不依赖全网倒排索引，通过 RSSHub 结构化路由命名空间，实现对目标网站的指定频道实时定点抓取。每个结果锚定一个可溯源 URL，解决 LLM 生成内容不可查证的问题。

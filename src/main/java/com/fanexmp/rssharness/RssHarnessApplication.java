@@ -1,4 +1,4 @@
-package com.fanexmp.rssagent;
+package com.fanexmp.rssharness;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,9 +8,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableAsync
 @EnableScheduling
-public class RssAgentApplication {
+public class RssHarnessApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RssAgentApplication.class, args);
+        SpringApplication.run(RssHarnessApplication.class, args);
     }
 }

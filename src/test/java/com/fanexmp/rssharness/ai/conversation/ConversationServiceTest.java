@@ -1,9 +1,9 @@
-package com.fanexmp.rssagent.ai.conversation;
+package com.fanexmp.rssharness.ai.conversation;
 
-import com.fanexmp.rssagent.ai.rag.RouteCatalog;
-import com.fanexmp.rssagent.ai.tool.RssTools;
-import com.fanexmp.rssagent.dto.FetchResponse;
-import com.fanexmp.rssagent.dto.FetchStatus;
+import com.fanexmp.rssharness.ai.rag.RouteCatalog;
+import com.fanexmp.rssharness.ai.tool.RssTools;
+import com.fanexmp.rssharness.dto.FetchResponse;
+import com.fanexmp.rssharness.dto.FetchStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.client.ChatClient;

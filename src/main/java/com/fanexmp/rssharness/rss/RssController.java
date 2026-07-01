@@ -1,7 +1,7 @@
-package com.fanexmp.rssagent.rss;
+package com.fanexmp.rssharness.rss;
 
-import com.fanexmp.rssagent.dto.FetchResponse;
-import com.fanexmp.rssagent.rss.services.RouteFetchService;
+import com.fanexmp.rssharness.dto.FetchResponse;
+import com.fanexmp.rssharness.rss.services.RouteFetchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 

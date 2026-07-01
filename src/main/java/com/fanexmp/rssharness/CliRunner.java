@@ -1,10 +1,10 @@
-package com.fanexmp.rssagent;
+package com.fanexmp.rssharness;
 
-import com.fanexmp.rssagent.ai.conversation.ConversationService;
-import com.fanexmp.rssagent.ai.conversation.SearchCallback;
-import com.fanexmp.rssagent.ai.rag.RouteCatalog;
-import com.fanexmp.rssagent.ai.rag.RouteSyncTask;
-import com.fanexmp.rssagent.dto.FetchResponse;
+import com.fanexmp.rssharness.ai.conversation.ConversationService;
+import com.fanexmp.rssharness.ai.conversation.SearchCallback;
+import com.fanexmp.rssharness.ai.rag.RouteCatalog;
+import com.fanexmp.rssharness.ai.rag.RouteSyncTask;
+import com.fanexmp.rssharness.dto.FetchResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 @Component
-@ConditionalOnProperty(name = "rssagent.cli.enabled", havingValue = "true", matchIfMissing = false)
+@ConditionalOnProperty(name = "rssharness.cli.enabled", havingValue = "true", matchIfMissing = false)
 public class CliRunner implements CommandLineRunner {
 
     private static final Logger log = LoggerFactory.getLogger(CliRunner.class);
@@ -55,7 +55,7 @@ public class CliRunner implements CommandLineRunner {
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.print("RssAgent> ");
+            System.out.print("RssHarness> ");
             String input = scanner.nextLine().trim();
             if (input.isEmpty()) continue;
 
@@ -210,7 +210,7 @@ public class CliRunner implements CommandLineRunner {
 
     private void printHelp() {
         System.out.println();
-        System.out.println("  RssAgent — RSS-powered Generative Search Agent");
+        System.out.println("  RssHarness — RSS-powered Generative Search Agent");
         System.out.println("  " + SEP.replaceAll("\033\\[[0-9;]*m", ""));
         System.out.println("  <question>    Ask a question (AI selects routes, fetches, summarizes)");
         System.out.println("  /sync         Refresh route catalog from RSSHub");
@@ -225,7 +225,7 @@ public class CliRunner implements CommandLineRunner {
     private void printBanner() {
         System.out.println();
         System.out.println("  ╔══════════════════════════════════════════════╗");
-        System.out.println("  ║       RssAgent — RSS Search Agent            ║");
+        System.out.println("  ║       RssHarness — RSS Search Agent            ║");
         System.out.println("  ║    AI-powered, source-traceable search       ║");
         System.out.println("  ╚══════════════════════════════════════════════╝");
         System.out.println();

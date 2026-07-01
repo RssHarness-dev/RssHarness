@@ -1,9 +1,9 @@
-package com.fanexmp.rssagent.rss;
+package com.fanexmp.rssharness.rss;
 
-import com.fanexmp.rssagent.dto.FetchResponse;
-import com.fanexmp.rssagent.dto.FetchStatus;
-import com.fanexmp.rssagent.dto.Summary;
-import com.fanexmp.rssagent.storage.dataview.DataViewFactory;
+import com.fanexmp.rssharness.dto.FetchResponse;
+import com.fanexmp.rssharness.dto.FetchStatus;
+import com.fanexmp.rssharness.dto.Summary;
+import com.fanexmp.rssharness.storage.dataview.DataViewFactory;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

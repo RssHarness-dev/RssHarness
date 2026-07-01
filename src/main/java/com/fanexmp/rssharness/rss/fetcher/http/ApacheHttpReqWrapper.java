@@ -1,6 +1,6 @@
-package com.fanexmp.rssagent.rss.fetcher.http;
+package com.fanexmp.rssharness.rss.fetcher.http;
 
-import com.fanexmp.rssagent.rss.exception.HttpReqException;
+import com.fanexmp.rssharness.rss.exception.HttpReqException;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.config.RequestConfig;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;

@@ -2,7 +2,7 @@
 
 ---
 
-# RssAgent — RSS-powered Generative Search Agent
+# RssHarness — RSS-powered Generative Search Agent
 
 **RSS 赋能的精准搜索代理** / *RSS-powered precise search agent*
 
@@ -93,33 +93,33 @@ Storage Domain (storage/)            ← DDD
 
 ### Docker (recommended)
 ```bash
-# Full stack: RssAgent + RSSHub
+# Full stack: RssHarness + RSSHub
 export DEEPSEEK_API_KEY=sk-your-key
 docker-compose up -d
 
 # Or pull pre-built image
-docker pull makeiny/rss-agent:latest
-docker run -e DEEPSEEK_API_KEY=sk-your-key makeiny/rss-agent:latest
+docker pull makeiny/rss-harness:latest
+docker run -e DEEPSEEK_API_KEY=sk-your-key makeiny/rss-harness:latest
 ```
 
 ### Local
 ```bash
 git clone <repo-url>
-cd rssagent
+cd rssharness
 export DEEPSEEK_API_KEY=sk-your-key
 ./mvnw package -DskipTests
-java -jar target/rssagent-0.0.1-SNAPSHOT.jar
+java -jar target/rssharness-0.0.1-SNAPSHOT.jar
 ```
 
 ### CLI Commands
 ```
-RssAgent> What's new in AI today?        ← ask any question
-RssAgent> /sync                           ← refresh route catalog from RSSHub
-RssAgent> /routes                         ← list all platforms
-RssAgent> /routes github                  ← list routes for a platform
-RssAgent> /new                            ← start new session
-RssAgent> /help
-RssAgent> /exit
+RssHarness> What's new in AI today?        ← ask any question
+RssHarness> /sync                           ← refresh route catalog from RSSHub
+RssHarness> /routes                         ← list all platforms
+RssHarness> /routes github                  ← list routes for a platform
+RssHarness> /new                            ← start new session
+RssHarness> /help
+RssHarness> /exit
 ```
 
 ---
@@ -129,9 +129,9 @@ RssAgent> /exit
 | Property | Default | Description |
 |---|---|---|
 | `spring.ai.deepseek.api-key` | `$DEEPSEEK_API_KEY` or fallback | DeepSeek API key |
-| `rssagent.cli.enabled` | `true` | Enable CLI REPL |
-| `rssagent.routes-url` | `http://127.0.0.1:1200/rsshub/routes/zh` | RSSHub routes RSS endpoint |
-| `rssagent.routes-file` | `./data/routes.json` | Local route cache file |
+| `rssharness.cli.enabled` | `true` | Enable CLI REPL |
+| `rssharness.routes-url` | `http://127.0.0.1:1200/rsshub/routes/zh` | RSSHub routes RSS endpoint |
+| `rssharness.routes-file` | `./data/routes.json` | Local route cache file |
 | `rss.fetch-interval` | `60` | Cooldown between fetches (seconds) |
 | `rss.config-path` | `config/rss-sources.json` | Route→URL mappings |
 | `rss.instance-path` | `config/rss-instances.json` | RSSHub instances |
@@ -160,7 +160,7 @@ RssAgent> /exit
 | Storage | `SummaryViewTest`, `StorageIntegrationTest` | 6 | Unit + Integration |
 | AI Routing | `RouteCatalogTest` | 5 | Unit |
 | AI Conversation | `ContextManagerTest`, `ConversationServiceTest` | 7 | Unit (Mockito) |
-| Application | `RssAgentApplicationTests` | 1 | Spring Integration |
+| Application | `RssHarnessApplicationTests` | 1 | Spring Integration |
 
 ---
 

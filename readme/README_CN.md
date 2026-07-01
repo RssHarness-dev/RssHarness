@@ -2,7 +2,7 @@
 
 ---
 
-# RssAgent — RSS 赋能的精准搜索代理
+# RssHarness — RSS 赋能的精准搜索代理
 
 **RSS 赋能的精准搜索代理** / *RSS-powered precise search agent*
 
@@ -106,7 +106,7 @@ Storage Domain (storage/)            ← DDD
 ### 构建 / Build
 ```bash
 git clone <repo-url>
-cd rssagent
+cd rssharness
 
 # Set DeepSeek API key (or edit application.properties)
 export DEEPSEEK_API_KEY=sk-your-key-here
@@ -122,26 +122,26 @@ export DEEPSEEK_API_KEY=sk-your-key
 docker-compose up -d
 
 # Or pull pre-built image
-docker pull makeiny/rss-agent:latest
-docker run -e DEEPSEEK_API_KEY=sk-your-key makeiny/rss-agent:latest
+docker pull makeiny/rss-harness:latest
+docker run -e DEEPSEEK_API_KEY=sk-your-key makeiny/rss-harness:latest
 ```
 
 ### 本地运行 / Local Run
 ```bash
 ./mvnw package -DskipTests
-java -jar target/rssagent-0.0.1-SNAPSHOT.jar
+java -jar target/rssharness-0.0.1-SNAPSHOT.jar
 ```
 
 ### CLI 命令 / CLI Commands
 ```
-RssAgent> 最近AI领域有什么新进展？       ← ask any question
-RssAgent> What's new in WebGPU?
-RssAgent> /sync                          ← refresh route catalog
-RssAgent> /routes                        ← list platforms
-RssAgent> /routes github                 ← list routes for a platform
-RssAgent> /new                           ← start new session
-RssAgent> /help
-RssAgent> /exit
+RssHarness> 最近AI领域有什么新进展？       ← ask any question
+RssHarness> What's new in WebGPU?
+RssHarness> /sync                          ← refresh route catalog
+RssHarness> /routes                        ← list platforms
+RssHarness> /routes github                 ← list routes for a platform
+RssHarness> /new                           ← start new session
+RssHarness> /help
+RssHarness> /exit
 ```
 
 ---
@@ -153,9 +153,9 @@ RssAgent> /exit
 | Property | Default | Description |
 |---|---|---|
 | `spring.ai.deepseek.api-key` | `$DEEPSEEK_API_KEY` or fallback | DeepSeek API key |
-| `rssagent.cli.enabled` | `true` | Enable CLI REPL |
-| `rssagent.routes-url` | `http://127.0.0.1:1200/rsshub/routes/zh` | RSSHub routes RSS endpoint |
-| `rssagent.routes-file` | `./data/routes.json` | Local route cache file |
+| `rssharness.cli.enabled` | `true` | Enable CLI REPL |
+| `rssharness.routes-url` | `http://127.0.0.1:1200/rsshub/routes/zh` | RSSHub routes RSS endpoint |
+| `rssharness.routes-file` | `./data/routes.json` | Local route cache file |
 | `rss.fetch-interval` | `60` | Cooldown between fetches (seconds) |
 | `rss.config-path` | `config/rss-sources.json` | Route→URL mappings |
 | `rss.instance-path` | `config/rss-instances.json` | RSSHub instances |
@@ -168,7 +168,7 @@ RssAgent> /exit
 
 | Override | Value | Purpose |
 |---|---|---|
-| `rssagent.cli.enabled` | `false` | 阻止 CLI 无限循环 / prevents hang |
+| `rssharness.cli.enabled` | `false` | 阻止 CLI 无限循环 / prevents hang |
 | `spring.ai.deepseek.api-key` | `test-key-placeholder` | 阻止真实 API 调用、mock 生效 / mock takes over |
 | `rss.fetch-interval` | `0` | 无冷却期、全链路验证 / no cooldown, full pipeline |
 | Mock ChatModel | `TestAiConfig` (via `spring.factories`) | 返回可解析的摘要 JSON / returns parseable JSON |
@@ -178,7 +178,7 @@ RssAgent> /exit
 ## 📂 项目结构 / Project Structure
 
 ```
-rssagent/
+rssharness/
 ├── pom.xml
 ├── README.md
 ├── PROGRESS.md
@@ -186,8 +186,8 @@ rssagent/
 ├── data/                              # EclipseStore data (runtime)
 ├── config/                            # RSS source & instance config files
 ├── src/
-│   ├── main/java/com/fanexmp/rssagent/
-│   │   ├── RssAgentApplication.java    # @SpringBootApplication
+│   ├── main/java/com/fanexmp/rssharness/
+│   │   ├── RssHarnessApplication.java    # @SpringBootApplication
 │   │   ├── CliRunner.java             # Interactive REPL (streaming)
 │   │   ├── dto/                       # Shared DTOs
 │   │   │   ├── FetchResponse.java
@@ -219,7 +219,7 @@ rssagent/
 │   ├── main/resources/
 │   │   └── application.properties
 │   └── test/                         # 53 tests (17 classes)
-│       ├── java/com/fanexmp/rssagent/
+│       ├── java/com/fanexmp/rssharness/
 │       │   ├── TestAiConfig.java     # Mock ChatModel
 │       │   ├── ai/                   # RouteCatalog, ContextManager, ConversationService tests
 │       │   ├── rss/                  # Controller, DTO, fetcher, parser, service tests
@@ -259,7 +259,7 @@ rssagent/
 | Storage | `SummaryViewTest`, `StorageIntegrationTest` | 6 | Unit + Integration |
 | AI Routing | `RouteCatalogTest` | 5 | Unit |
 | AI Conversation | `ContextManagerTest`, `ConversationServiceTest` | 7 | Unit (Mockito) |
-| Application | `RssAgentApplicationTests` | 1 | Spring Integration |
+| Application | `RssHarnessApplicationTests` | 1 | Spring Integration |
 
 ---
 

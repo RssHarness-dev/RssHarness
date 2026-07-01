@@ -1,12 +1,12 @@
-package com.fanexmp.rssagent.ai.tool;
+package com.fanexmp.rssharness.ai.tool;
 
-import com.fanexmp.rssagent.ai.dto.AiSelections.RouteParam;
-import com.fanexmp.rssagent.ai.rag.RouteCatalog;
-import com.fanexmp.rssagent.dto.FetchResponse;
-import com.fanexmp.rssagent.dto.FetchStatus;
-import com.fanexmp.rssagent.dto.Summary;
-import com.fanexmp.rssagent.rss.RssController;
-import com.fanexmp.rssagent.storage.dataview.DataViewFactory;
+import com.fanexmp.rssharness.ai.dto.AiSelections.RouteParam;
+import com.fanexmp.rssharness.ai.rag.RouteCatalog;
+import com.fanexmp.rssharness.dto.FetchResponse;
+import com.fanexmp.rssharness.dto.FetchStatus;
+import com.fanexmp.rssharness.dto.Summary;
+import com.fanexmp.rssharness.rss.RssController;
+import com.fanexmp.rssharness.storage.dataview.DataViewFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.tool.annotation.Tool;

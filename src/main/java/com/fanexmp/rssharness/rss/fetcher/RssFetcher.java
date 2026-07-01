@@ -1,9 +1,9 @@
-package com.fanexmp.rssagent.rss.fetcher;
+package com.fanexmp.rssharness.rss.fetcher;
 
-import com.fanexmp.rssagent.rss.dto.RssInstance;
-import com.fanexmp.rssagent.rss.exception.HttpReqException;
-import com.fanexmp.rssagent.rss.fetcher.http.HttpReqWrapper;
-import com.fanexmp.rssagent.rss.fetcher.http.RssInstanceManager;
+import com.fanexmp.rssharness.rss.dto.RssInstance;
+import com.fanexmp.rssharness.rss.exception.HttpReqException;
+import com.fanexmp.rssharness.rss.fetcher.http.HttpReqWrapper;
+import com.fanexmp.rssharness.rss.fetcher.http.RssInstanceManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

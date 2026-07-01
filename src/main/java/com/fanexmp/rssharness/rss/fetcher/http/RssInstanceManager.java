@@ -1,6 +1,6 @@
-package com.fanexmp.rssagent.rss.fetcher.http;
+package com.fanexmp.rssharness.rss.fetcher.http;
 
-import com.fanexmp.rssagent.rss.dto.RssInstance;
+import com.fanexmp.rssharness.rss.dto.RssInstance;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;

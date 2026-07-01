@@ -1,4 +1,4 @@
-package com.fanexmp.rssagent.dto;
+package com.fanexmp.rssharness.dto;
 
 public class Summary {
 

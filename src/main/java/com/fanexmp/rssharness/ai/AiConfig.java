@@ -1,7 +1,7 @@
-package com.fanexmp.rssagent.ai;
+package com.fanexmp.rssharness.ai;
 
-import com.fanexmp.rssagent.ai.rag.RouteCatalog;
-import com.fanexmp.rssagent.ai.tool.RssTools;
+import com.fanexmp.rssharness.ai.rag.RouteCatalog;
+import com.fanexmp.rssharness.ai.tool.RssTools;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
@@ -17,7 +17,7 @@ import java.nio.file.Path;
 @Configuration
 public class AiConfig {
 
-    @Value("${rssagent.routes-file:./data/routes.json}")
+    @Value("${rssharness.routes-file:./data/routes.json}")
     private Path routesFile;
 
 

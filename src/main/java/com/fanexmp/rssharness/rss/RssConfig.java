@@ -1,13 +1,13 @@
-package com.fanexmp.rssagent.rss;
+package com.fanexmp.rssharness.rss;
 
-import com.fanexmp.rssagent.rss.fetcher.RssFetcher;
-import com.fanexmp.rssagent.rss.fetcher.config.JsonRssConfigRepository;
-import com.fanexmp.rssagent.rss.fetcher.config.RssConfigRepository;
-import com.fanexmp.rssagent.rss.fetcher.http.ApacheHttpReqWrapper;
-import com.fanexmp.rssagent.rss.fetcher.http.HttpReqWrapper;
-import com.fanexmp.rssagent.rss.fetcher.http.RssInstanceManager;
-import com.fanexmp.rssagent.rss.parser.RssXmlParser;
-import com.fanexmp.rssagent.rss.parser.RssXmlParserV1;
+import com.fanexmp.rssharness.rss.fetcher.RssFetcher;
+import com.fanexmp.rssharness.rss.fetcher.config.JsonRssConfigRepository;
+import com.fanexmp.rssharness.rss.fetcher.config.RssConfigRepository;
+import com.fanexmp.rssharness.rss.fetcher.http.ApacheHttpReqWrapper;
+import com.fanexmp.rssharness.rss.fetcher.http.HttpReqWrapper;
+import com.fanexmp.rssharness.rss.fetcher.http.RssInstanceManager;
+import com.fanexmp.rssharness.rss.parser.RssXmlParser;
+import com.fanexmp.rssharness.rss.parser.RssXmlParserV1;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
