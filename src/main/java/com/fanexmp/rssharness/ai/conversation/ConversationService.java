@@ -6,6 +6,7 @@ import com.fanexmp.rssharness.dto.FetchResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,7 +30,8 @@ public class ConversationService {
     public List<FetchResponse> search(String sessionId, String question) {
         chatClient.prompt()
                 .user(question)
-                                .call()
+                .advisors(a -> a.param(ChatMemory.CONVERSATION_ID, sessionId))
+                .call()
                 .content();
         return rssTools.getLastResults();
     }
@@ -39,7 +41,8 @@ public class ConversationService {
         try {
             ChatResponse last = chatClient.prompt()
                     .user(question)
-                                        .stream()
+                    .advisors(a -> a.param(ChatMemory.CONVERSATION_ID, sessionId))
+                    .stream()
                     .chatResponse()
                     .doOnNext(resp -> {
                         String text = resp.getResult().getOutput().getText();

@@ -10,6 +10,7 @@ import org.springframework.ai.chat.client.ChatClient;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
@@ -39,6 +40,7 @@ class ConversationServiceTest {
 
         when(chatClient.prompt()).thenReturn(requestSpec);
         when(requestSpec.user(anyString())).thenReturn(requestSpec);
+        when(requestSpec.advisors(any(Consumer.class))).thenReturn(requestSpec);
         when(requestSpec.call()).thenReturn(responseSpec);
 
         service = new ConversationService();
