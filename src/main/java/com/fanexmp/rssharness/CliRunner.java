@@ -40,6 +40,12 @@ public class CliRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
+        if (System.console() == null) {
+            log.info("No console available — CLI mode skipped. "
+                    + "Use rssharness.cli.enabled=false to suppress this message.");
+            return;
+        }
+
         sessionId = UUID.randomUUID().toString();
 
         System.out.printf("  Route catalog: %d platforms, %d routes.%n",
@@ -56,6 +62,7 @@ public class CliRunner implements CommandLineRunner {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.print("RssHarness> ");
+            if (!scanner.hasNextLine()) break;
             String input = scanner.nextLine().trim();
             if (input.isEmpty()) continue;
 
